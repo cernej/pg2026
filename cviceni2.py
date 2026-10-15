@@ -39,6 +39,9 @@ def formatuj_text(student):
 
 if __name__ == "__main__":
 
+    text = "25"
+    print(text[0])
+
     student = {
         "jmeno": "Jan",
         "prijmeni": "Novak",
