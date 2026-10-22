@@ -16,14 +16,23 @@ def my_zip(*iterables):
         ('Martin',27, 67)
     ]
     """
-    pass
+    vysledek = []
+    lenght = min(len(iterable) for iterable in iterables)
+    i = 0
+    while i < lenght:
+        value = []
+        for iterable in iterables:
+            value.append(iterable[i])
+        vysledek.append(tuple(value))
+        i += 1
+    return vysledek
 
 
 if __name__ == "__main__":
 
     jmena = ["Alice", "Bob", "Karel", "Eva", "Martin"]
     vek =   [  30,     20,     24,     18,     27    ]
-    vaha =  [  50,     80,     90,     55,     67    ]
+    vaha =  [  50,     80,     90,     55,     55    ]
 
     vysledek = list( zip(jmena, vek, vaha) )
     print(vysledek)
