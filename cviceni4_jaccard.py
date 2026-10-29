@@ -19,7 +19,17 @@ def jaccardova_vzdalenost_mnozin(mnozina1, mnozina2):
     :param mnozina2: Druhá množina prvků
     :return: Desetinné číslo (float) od 0.0 do 1.0 udávající míru rozdílu
     """
-    pass
+
+    mnozina1 = set(mnozina1)
+    mnozina2 = set(mnozina2)
+
+    prunik = mnozina1.intersection(mnozina2)
+    sjednoceni = mnozina1.union(mnozina2)
+    # Výpočet Jaccardova indexu
+    jaccard_index = len(prunik) / len(sjednoceni)
+    # Výpočet Jaccardovy vzdálenosti
+    jaccard_distance = 1 - jaccard_index
+    return jaccard_distance
 
 
 if __name__ == "__main__":

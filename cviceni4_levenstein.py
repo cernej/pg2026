@@ -15,7 +15,13 @@ def levensteinova_vzdalenost(dotaz1, dotaz2):
     :param dotaz2: Druhý textový řetězec
     :return: Celé číslo udávající míru rozdílu
     """
-    pass
+    leventein = 0
+    length = min(len(dotaz1), len(dotaz2))
+    for i in range(length):
+        if dotaz1[i] != dotaz2[i]:
+            leventein += 1
+    leventein += abs(len(dotaz1) - len(dotaz2))
+    return leventein
 
 
 if __name__ == "__main__":
@@ -25,8 +31,8 @@ if __name__ == "__main__":
     query3 = "sesnam"
     query4 = "seznam"
 
-    print(levensteinova_vzdalenost_for(query1, query2))
-    print(levensteinova_vzdalenost_for(query2, query3))
-    print(levensteinova_vzdalenost_for(query1, query3))
+    print(levensteinova_vzdalenost(query1, query2)) # 2
+    print(levensteinova_vzdalenost(query2, query3)) # 3
+    print(levensteinova_vzdalenost(query1, query3)) # 1
 
-    print(levensteinova_vzdalenost_for(query1, query4))
+    print(levensteinova_vzdalenost(query1, query4)) # 0

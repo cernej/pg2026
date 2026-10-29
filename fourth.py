@@ -34,7 +34,7 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
 if __name__ == "__main__":
     kral = {"typ": "král", "pozice": (4, 4)}
     jezdec = {"typ": "jezdec", "pozice": (3, 3)}
-    obsazene_pozice = {(4, 4), (5, 5), (3, 5)}
+    obsazene_pozice = {(3, 4), (5, 5), (3, 5)}
 
     # Testy pro krále
     print(je_tah_mozny(kral, (5, 5), obsazene_pozice))  # False (obsazeno)
