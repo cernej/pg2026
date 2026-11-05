@@ -1,4 +1,1 @@
-Jan,Dvorak,18
-Martin,Ptacek,23
-1,Novotny,40
-Eva,Novakova,15
+{"jmeno": "Alice", "vek": 20}
