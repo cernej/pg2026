@@ -1,11 +1,18 @@
 import sys
+from cviceni6 import download_rates
+
 
 def convert_ammount(ammount, currency):
-    return 0.0
+    rates = download_rates()
+    if currency not in rates:
+        return 0.0
+    rate = rates[currency]
+    return ammount / rate
 
 if __name__ == "__main__":
 
     if len(sys.argv) < 3:
+        print(f"Usage: {sys.argv[0]} ammount currency")
         sys.exit()
 
     ammount = int(sys.argv[1])
