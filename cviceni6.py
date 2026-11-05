@@ -21,17 +21,33 @@ def get_model_names(prefix):
     return model_names
 
 
+def download_rates():
+    r = requests.get(url2)
+    if r.status_code != 200:
+        return {}
+    data = r.text
+    lines = data.splitlines()[2:]
+    vysledek = {}
+    for line in lines:
+        hodnoty = line.split("|")
+        vysledek[hodnoty[3]] = float(hodnoty[4].replace(",", ".")) / int(hodnoty[2])
+    return vysledek
+
+
 if __name__ == "__main__":
     # responce = requests.get(url)
     # if responce.status_code == 200:
     #     print(responce.content)
     # responce.json()
 
-    if len(sys.argv) < 2:
-        print(f"Usage: {sys.argv[0]} prefix")
-        sys.exit()
+    # if len(sys.argv) < 2:
+    #     print(f"Usage: {sys.argv[0]} prefix")
+    #     sys.exit()
 
-    prefix = sys.argv[1]
-    models = get_model_names(prefix)
-    for model in models:
-        print(model)
+    # prefix = sys.argv[1]
+    # models = get_model_names(prefix)
+    # for model in models:
+    #     print(model)
+
+    rates = download_rates()
+    print(rates)
