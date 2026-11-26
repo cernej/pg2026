@@ -25,10 +25,10 @@ if __name__ == "__main__":
     try:
         url = sys.argv[1]
         all_hrefs = download_url_and_get_all_hrefs(url)
-        #print(all_hrefs)
-        for url in all_hrefs:
-            hrefs = download_url_and_get_all_hrefs(url)
-            print(hrefs)
+        print(all_hrefs)
+        # for url in all_hrefs:
+        #     hrefs = download_url_and_get_all_hrefs(url)
+        #     print(hrefs)
     # osetrete potencialni chyby pomoci vetve except
     except Exception as e:
         print(f"Program skoncil chybou: {e}")

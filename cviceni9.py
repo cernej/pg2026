@@ -1,5 +1,7 @@
 def nejvetsi(seznam_cisel):
-    return 0
+    if not seznam_cisel:
+        return None
+    return max(seznam_cisel)
 
 
 def test_nejvetsi():

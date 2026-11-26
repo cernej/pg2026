@@ -11,7 +11,7 @@ def filtruj_cisla(typ, cisla):
     return vysledek
 
 
-if __name__ == "__main__":
+def test_filtruj_cisla():
     assert filtruj_cisla("kladna", [1, -2, 0, 5, -3]) == [1, 5]
     assert filtruj_cisla("suda", [1, 2, 3, 4, 5]) == [2, 4]
     assert filtruj_cisla("zaporna", [1, -2, 0, 5, -3]) == [-2, -3]
